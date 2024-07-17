@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class CharacterCount {
+    
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String str = scanner.nextLine();
+        
+        System.out.print("Enter a character: ");
+        char a = scanner.next().charAt(0);
+        
+        int count = count(str, a);
+        System.out.println("The character '" + a + "' appears " + count + " times in the string \"" + str + "\".");
+        
+        scanner.close();
+    }
+
+    public static int count(String str, char a) {
+        return (int) str.chars()
+                        .filter(ch -> ch == a)
+                        .count();
+    }
+}
